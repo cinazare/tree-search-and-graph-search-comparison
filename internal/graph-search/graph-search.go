@@ -13,3 +13,12 @@ func Run(graph graph.Graph) int {
 	fmt.Println(graph)
 	return 0
 }
+
+
+func BFS(graph graph.Graph) {
+
+}
+
+func DFS(graph graph.Graph) {
+	
+}
