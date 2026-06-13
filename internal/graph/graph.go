@@ -28,44 +28,77 @@ func GraphConstructor() *Graph {
 
 
 func GetSampleHardcodedData(id string) (*Graph, error) {
-	if id == "0"{
+	if id == "0" {
+
 		graph := GraphConstructor()
-		// Defining path: A -> C -> F
-		graph.AddToEdge("A", "B")
-		graph.AddToEdge("A", "C")
-		graph.AddToEdge("B", "D")
-		graph.AddToEdge("B", "E")
-		graph.AddToEdge("C", "F") // F is now reachable!
-		graph.AddToEdge("E", "F") // Another path to F
-		
+
+		// Graph 0:
+		// Contains a cycle.
+		// F is reachable.
+		// Tree Search DFS may loop forever.
+		// Graph Search DFS/BFS should succeed.
+
+		graph.AddToEdge("A", "N0")
+
+		for i := 0; i < 5000; i++ {
+			graph.AddToEdge(
+				fmt.Sprintf("N%d", i),
+				fmt.Sprintf("N%d", i+1),
+			)
+		}
+
+		// Cycle
+		graph.AddToEdge("N5000", "N2500")
+
+		// Goal
+		graph.AddToEdge("N4999", "F")
+
 		return graph, nil
-		
-	} else if id == "1"{
+
+	} else if id == "1" {
+
 		graph := GraphConstructor()
-		
-		graph.AddToEdge("A", "B")
-		graph.AddToEdge("A", "C")
-		graph.AddToEdge("B", "D")
-		graph.AddToEdge("C", "E")
-		
-		// Component 2 (disconnected from A)
+
+		// Graph 1:
+		// F is NOT reachable.
+		// DFS/BFS must traverse thousands of nodes.
+
+		graph.AddToEdge("A", "N0")
+
+		for i := 0; i < 10000; i++ {
+			graph.AddToEdge(
+				fmt.Sprintf("N%d", i),
+				fmt.Sprintf("N%d", i+1),
+			)
+		}
+
+		// Disconnected component
 		graph.AddToEdge("F", "G")
-	
+
 		return graph, nil
-		
-	} else if id == "2"{
-	
-		graph := GraphConstructor()
-		// A -> B -> C -> B creates a loop
-		// B -> F makes F reachable despite the loop
-	
-		graph.AddToEdge("A", "B")
-		graph.AddToEdge("B", "C")
-		graph.AddToEdge("C", "B")
-		graph.AddToEdge("B", "F")
-	
+
+	} else if id == "2" {
+				graph := GraphConstructor()
+
+		// Graph 2:
+		// F is reachable.
+		// Large binary-tree-like graph.
+
+		graph.AddToEdge("A", "N0")
+
+		for i := 0; i < 5000; i++ {
+			from := fmt.Sprintf("N%d", i)
+			left := fmt.Sprintf("N%d", i*2+1)
+			right := fmt.Sprintf("N%d", i*2+2)
+
+			graph.AddToEdge(from, left)
+			graph.AddToEdge(from, right)
+		}
+
+		graph.AddToEdge("N9998", "F")
+
 		return graph, nil
-	
 	}
+
 	return nil, fmt.Errorf("graph with %s id was not found", id)
 }

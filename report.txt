@@ -1,0 +1,108 @@
+
+==================================================
+Algorithm: Graph Search BFS
+Graph Index: 0
+Result: true
+Storage Usage (nodes): 2
+Generated Nodes: 5003
+Processed Nodes: 5003
+Time Running: 1177300 ns
+
+==================================================
+Algorithm: Graph Search DFS
+Graph Index: 0
+Result: true
+Storage Usage (nodes): 5002
+Generated Nodes: 5003
+Processed Nodes: 5003
+Time Running: 2335800 ns
+
+==================================================
+Algorithm: Tree Search BFS
+Graph Index: 0
+Result: true
+Storage Usage (nodes): 2
+Generated Nodes: 5004
+Processed Nodes: 5003
+Time Running: 562100 ns
+
+==================================================
+Algorithm: Tree Search DFS
+Graph Index: 0
+Result: false
+Storage Usage (nodes): 3000
+Generated Nodes: 3000
+Processed Nodes: 3000
+Time Running: 562000 ns
+
+==================================================
+Algorithm: Graph Search BFS
+Graph Index: 1
+Result: false
+Storage Usage (nodes): 1
+Generated Nodes: 10002
+Processed Nodes: 10002
+Time Running: 3661500 ns
+
+==================================================
+Algorithm: Graph Search DFS
+Graph Index: 1
+Result: false
+Storage Usage (nodes): 10002
+Generated Nodes: 10001
+Processed Nodes: 10002
+Time Running: 1288400 ns
+
+==================================================
+Algorithm: Tree Search BFS
+Graph Index: 1
+Result: false
+Storage Usage (nodes): 1
+Generated Nodes: 10002
+Processed Nodes: 10002
+Time Running: 1166800 ns
+
+==================================================
+Algorithm: Tree Search DFS
+Graph Index: 1
+Result: false
+Storage Usage (nodes): 3000
+Generated Nodes: 3000
+Processed Nodes: 3000
+Time Running: 0 ns
+
+==================================================
+Algorithm: Graph Search BFS
+Graph Index: 2
+Result: true
+Storage Usage (nodes): 5001
+Generated Nodes: 10003
+Processed Nodes: 10003
+Time Running: 1558400 ns
+
+==================================================
+Algorithm: Graph Search DFS
+Graph Index: 2
+Result: true
+Storage Usage (nodes): 16
+Generated Nodes: 3628
+Processed Nodes: 3623
+Time Running: 0 ns
+
+==================================================
+Algorithm: Tree Search BFS
+Graph Index: 2
+Result: true
+Storage Usage (nodes): 5001
+Generated Nodes: 10003
+Processed Nodes: 10003
+Time Running: 2000600 ns
+
+==================================================
+Algorithm: Tree Search DFS
+Graph Index: 2
+Result: true
+Storage Usage (nodes): 16
+Generated Nodes: 3628
+Processed Nodes: 3623
+Time Running: 507000 ns
